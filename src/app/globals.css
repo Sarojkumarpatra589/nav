@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+
+  /* Cyber-Organic Palette */
+  --color-canvas: #030A0D;
+  --color-surface: #06151A;
+  --color-lime: #8CEE3F;
+  --color-emerald: #4ADE80;
+  --color-mint: #2DD4BF;
+  --color-cyan: #0EA5E9;
+  --color-light-cyan: #38BDF8;
+  --color-text-primary: #F4FBF8;
+  --color-text-secondary: #A6BBB9;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: #030A0D;
+  color: #F4FBF8;
+}
+
+/* Ensure fixed navbar never covers section headings on anchor navigation */
+[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+/* Accessibility: Respect Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: #030A0D;
+  color: #F4FBF8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Cyber Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #030A0D;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(45, 212, 191, 0.25);
+  border-radius: 9999px;
+  border: 1px solid rgba(140, 238, 63, 0.15);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(45, 212, 191, 0.45);
+}
+
+/* Dark Cyber-Organic Glassmorphism Utilities */
+.cyber-glass {
+  background: rgba(6, 21, 26, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(45, 212, 191, 0.18);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(45, 212, 191, 0.05) inset;
+}
+
+.cyber-glass-card {
+  background: rgba(6, 21, 26, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(45, 212, 191, 0.18);
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.5);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cyber-glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(140, 238, 63, 0.45);
+  box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.7), 0 0 30px -5px rgba(45, 212, 191, 0.2);
+}
+
+.cyber-pill {
+  background: rgba(6, 21, 26, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* Cyber Gradients & Shimmer */
+.shimmer-cyber {
+  background: linear-gradient(
+    90deg,
+    #8CEE3F 0%,
+    #4ADE80 25%,
+    #2DD4BF 50%,
+    #0EA5E9 75%,
+    #8CEE3F 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: cyberShine 8s linear infinite;
+}
+
+@keyframes cyberShine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Subtle Glows */
+.glow-cyber-lime {
+  box-shadow: 0 0 35px -5px rgba(140, 238, 63, 0.25);
+}
+
+.glow-cyber-cyan {
+  box-shadow: 0 0 35px -5px rgba(14, 165, 233, 0.25);
+}
+
+.glow-cyber-mint {
+  box-shadow: 0 0 35px -5px rgba(45, 212, 191, 0.25);
+}
+
+/* Background Grids */
+.bg-grid-cyber {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(45, 212, 191, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(45, 212, 191, 0.05) 1px, transparent 1px);
+}
